@@ -79,9 +79,9 @@ a:hover {
   transform: translateY(-5px);
 }
 
-.project img {
+.project img,
+.projektbild {
   width: 100%;
-  height: auto;
   border-radius: 4px;
   margin-bottom: 1rem;
 }
