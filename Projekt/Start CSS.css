@@ -1,0 +1,173 @@
+body {
+  background: url("hintergrundstart.mp4") no-repeat center center fixed;
+  background-size: cover;
+}
+
+#hintergrundstart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#aktuellschiff{
+
+    padding: 20px 30px;
+    font-size: 15pt;
+    background-color: black;
+    color: white;
+    border: 10%;
+    border-color: blueviolet;
+    border-radius: 20px;
+    cursor: pointer;
+    justify-content: center;
+    position: fixed;
+    left: 77%;
+    top: 86%;
+}
+
+.grid-button {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    gap: 20px;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    right: 50%;
+    bottom: 50%;
+}
+
+#button1 {
+    padding: 100px 100px;
+    font-size: 15pt;
+    background-color: black;
+    color: white;
+    border: 10%;
+    border-color: blueviolet;
+    cursor: pointer;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+#button1:hover {
+    background-color: rgb(161, 87, 22);
+}
+
+#button2 {
+    padding: 100px 100px;
+    font-size: 15pt;
+    background-color: black;
+    color: white;
+    border: 10%;
+    border-color: blueviolet;
+    cursor: pointer;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+#button2:hover {
+    background-color: rgb(161, 87, 22);
+}
+
+#button3 {
+    padding: 20px 30px;
+    font-size: 15pt;
+    background-color: black;
+    color: white;
+    border: 10%;
+    border-color: blueviolet;
+    border-radius: 20px;
+    cursor: pointer;
+    justify-content: center;
+    position: fixed;
+    left: 27%;
+    top: 87%;
+}
+
+#button3:hover {
+    background-color: rgb(161, 87, 22);
+}
+#erweiterung{
+    position: absolute;
+    left: 35%;
+    top: 70%;
+    max-height: 100px;
+    max-width: 100px;
+    animation: float 4s ease-in-out infinite;
+}
+
+#button5 {
+    padding: 20px 30px;
+    font-size: 15pt;
+    background-color: black;
+    color: white;
+    border: 10%;
+    border-color: blueviolet;
+    border-radius: 20px;
+    cursor: pointer;
+    justify-content: center;
+    position: fixed;
+    left: 5%;
+    top: 87%;
+}
+
+#button5:hover {
+    background-color: rgb(161, 87, 22);
+}
+#dreischiff{
+    position: absolute;
+    left: 12%;
+    top: 70%;
+    max-height: 100px;
+    max-width: 100px;
+    animation: float 4s ease-in-out infinite;
+}
+
+#spieler {
+    position: absolute;
+    left: 80%;
+    top: 70%;
+    max-height: 100px;
+    max-width: 100px;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+h1 {
+    color: white;
+    position: fixed;
+    top: 15%;
+    left: 38%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40pt;
+}
+
+#punkteAnzeige {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 100;
+}
