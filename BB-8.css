@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  background-color: #0a0a0a;
+  color: #d1d1d1;
+  line-height: 1.6;
+  padding: 0;
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  background: #111;
+  color: #eaeaea;
+  border-bottom: 1px solid #2c2c2c;
+  animation: fadeInTop 1s ease;
+}
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: 3.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.main-nav {
+  background: #101010;
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.main-nav a {
+  color: #cfcfcf;
+  margin: 0 1.2rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #ffffff;
+}
+
+.section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: #141414;
+  border-radius: 6px;
+  border: 1px solid #222;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 1.2s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section h2, .section h3 {
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.4rem;
+}
+
+.section p {
+  color: #ccc;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.section ul {
+  padding-left: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.section ul li {
+  margin-bottom: 0.8rem;
+  color: #aaa;
+  list-style: square;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #bbb;
+  text-decoration: none;
+  border: 1px solid #333;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.back-link:hover {
+  background: #222;
+  color: #fff;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #0a0a0a;
+  font-size: 0.85rem;
+  color: #666;
+  border-top: 1px solid #1a1a1a;
+}
+
+footer a {
+  color: #888;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #bbb;
+}
