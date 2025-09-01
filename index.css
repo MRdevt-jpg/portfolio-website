@@ -1,8 +1,35 @@
+code .keyword { color: #ff7b72; }
+code .string  { color: #a5d6ff; }
+code .number  { color: #f2cc60; }
+code .comment { color: #8b949e; font-style: italic; }
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #111;
   color: #fff;
+}
+
+.small-img {
+  max-width: 300px; 
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+pre {
+  background: #0d1117;        
+  color: #c9d1d9;             
+  padding: 14px 18px;
+  border-radius: 10px;
+  overflow-x: auto;           
+  margin: 16px 0;
+  font-size: 0.95rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  line-height: 1.5;
 }
 
 a {

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Orbit-Simulator (Python) – Miguel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <meta name="description"
+        content="Orbit-Simulator in Python: Kreis-/Ellipsenbahnen, Hohmann-Transfer und Δv-Reports mit Visualisierung.">
+</head>
+
+<body>
+    <header class="hero small">
+        <h1 class="title">Orbit-Simulator</h1>
+    </header>
+
+    <nav class="main-nav">
+        <a href="index.html">Start</a>
+        <a href="projekte.html">Projekte</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+
+    <main class="section">
+        <div class="project-hero" style="display:flex;gap:24px;flex-wrap:wrap;align-items:center">
+            <div>
+                <p>Simulation von <strong>Kreis- und Ellipsenbahnen</strong> um die Erde mit Visualisierung in Python.
+                    Enthält
+                    <strong>Hohmann-Transferellipse</strong> sowie <strong>Δv1/Δv2/Δv_total</strong> und Transferzeit.
+                </p>
+                <p><a class="btn" href="https://github.com/MRdevt-jpg/orbit-simulator" target="_blank">GitHub-Repo
+                        öffnen</a></p>
+            </div>
+        </div>
+
+        <h2>Screenshots</h2>
+        <div class="project-grid">
+            <img src="orbitcircle.png" alt="Orbit Kreisbahn" class="project-thumb small-img">
+            <img src="hohmann.png" alt="Hohmann-Transferellipse" class="project-thumb small-img">
+        </div>
+
+        <h2>Beispielausgabe</h2>
+        <table>
+            <tr>
+                <th>Höhe</th>
+                <th>Geschwindigkeit</th>
+                <th>Umlaufzeit</th>
+                <th>Orbit-Typ</th>
+            </tr>
+            <tr>
+                <td>400 km</td>
+                <td>7.67 km/s</td>
+                <td>92 min</td>
+                <td>Kreisbahn</td>
+            </tr>
+            <tr>
+                <td>35.786 km</td>
+                <td>3.07 km/s</td>
+                <td>1429 min</td>
+                <td>GEO-Kreisbahn</td>
+            </tr>
+        </table>
+
+        <p>
+            Dieses Projekt zeigt, wie man mit Python grundlegende Himmelsmechanik berechnen kann.
+            Typische Größen wie Kreisgeschwindigkeit, Fluchtgeschwindigkeit oder Umlaufzeit werden automatisch berechnet
+            und anschaulich visualisiert.
+        </p>
+
+        <h2>Code-Beispiele</h2>
+        <h3>Orbit berechnen</h3>
+        <pre><code>
+            from orbit_logic import compute_orbit_at_radius
+
+            Beispiel: LEO (400 km Höhe, 7.67 km/s)
+            result = compute_orbit_at_radius(400, 7.67)
+
+            print(result["type"])        -> "circle"
+            print(result["period_min"])  -> Umlaufzeit in Minuten
+        </code></pre>
+        <p>
+            Mit <code>compute_orbit_at_radius</code> wird aus Höhe + Geschwindigkeit der Orbit bestimmt.
+            Das Ergebnis enthält den Typ (Kreis, Ellipse oder Fluchtbahn), Perigäum, Apogäum
+            und Umlaufzeit.
+        </p>
+
+        <h3>Hohmann-Transfer berechnen</h3>
+        <pre><code>
+            from orbit_core import hohmann_delta_v, hohmann_transfer_time
+            from constant import MU, R_EARTH
+            from units import km_to_m
+
+            r1 = R_EARTH + km_to_m(400)      Start in LEO
+            r2 = R_EARTH + km_to_m(35786)    Ziel: GEO
+
+            dv1, dv2, dv_total = hohmann_delta_v(MU, r1, r2)
+            t = hohmann_transfer_time(MU, r1, r2)
+
+            print(dv1, dv2, dv_total, t)
+        </code></pre>
+        <p>
+            Damit lassen sich die <strong>Δv-Werte für einen Hohmann-Transfer</strong> sowie
+            die Transferzeit zwischen zwei Kreisbahnen berechnen.
+        </p>
+
+        <h2>Kurzinfo</h2>
+        <ul>
+            <li>Orbit-Report: Perigäum, Apogäum, Umlaufzeit, Referenz-Geschwindigkeiten</li>
+            <li>Hohmann-Transfer: Δv1, Δv2, Δv_total, Transferzeit</li>
+            <li>Matplotlib-Plots, Export in <code>data/</code></li>
+            <li>Saubere Modulstruktur (core/logic/visualize/cli)</li>
+        </ul>
+
+        <p><a href="projekte.html">← Zurück zu den Projekten</a></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Miguel – <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
+    </footer>
+</body>
+
+</html>
