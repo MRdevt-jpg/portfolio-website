@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Charakter erstellen</title>
+  <link rel="stylesheet" href="Lebensziel 3.css">
+</head>
+<body>
+  <header>
+    <h1>🎭 Charakter erstellen</h1>
+    <p>Baue deinen Helden, bevor das Abenteuer startet!</p>
+  </header>
+
+  <main class="card">
+    <form id="charForm" class="char-form">
+      <div class="row">
+        <label for="charName">Name</label>
+        <input type="text" id="charName" placeholder="Dein Name" required>
+      </div>
+
+      <div class="row">
+        <label>Avatar</label>
+        <div class="avatar-grid" id="avatarChoices"></div>
+      </div>
+
+      <div class="row">
+        <label for="charGoal">Dein großes Ziel</label>
+        <input type="text" id="charGoal" placeholder="z. B. Berghaus + Freiheit">
+      </div>
+
+      <div class="row">
+        <label for="themeColor">Akzentfarbe</label>
+        <input type="color" id="themeColor" value="#00d1ff">
+      </div>
+
+      <button type="submit" class="primary">✅ Charakter starten</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Dein Held wird gespeichert und im Game geladen.</p>
+  </footer>
+
+  <script src="Lebensziel 3.js"></script>
+</body>
+</html>

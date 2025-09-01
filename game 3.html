@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Dein Abenteuer</title>
+  <link rel="stylesheet" href="Lebensziel 3.css">
+</head>
+<body>
+  <header>
+    <h1>🗡️ Abenteuer-Dashboard</h1>
+    <p id="welcomeText">Willkommen, Held!</p>
+  </header>
+
+  <!-- Charakterkarte -->
+  <section class="card" id="charCard">
+    <div class="char-hero">
+      <div class="char-avatar" id="charAvatar">🧑‍🚀</div>
+      <div>
+        <h2 id="charTitle">–</h2>
+        <p id="charGoalText" class="muted">Ziel: –</p>
+      </div>
+    </div>
+
+    <!-- Werte -->
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-header"><span>Stärke</span><span id="S_val">0</span></div>
+        <div class="bar"><div class="fill" id="S_bar"></div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-header"><span>Intelligenz</span><span id="I_val">0</span></div>
+        <div class="bar"><div class="fill" id="I_bar"></div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-header"><span>Disziplin</span><span id="D_val">0</span></div>
+        <div class="bar"><div class="fill" id="D_bar"></div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-header"><span>Ausdauer</span><span id="A_val">0</span></div>
+        <div class="bar"><div class="fill" id="A_bar"></div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-header"><span>Charisma</span><span id="C_val">0</span></div>
+        <div class="bar"><div class="fill" id="C_bar"></div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-header"><span>Fokus</span><span id="F_val">0</span></div>
+        <div class="bar"><div class="fill" id="F_bar"></div></div>
+      </div>
+    </div>
+
+    <div class="stats-meta">
+      <p>Level: <span id="charLevel">1</span></p>
+      <p>XP: <span id="charXP">0</span></p>
+    </div>
+
+    <div class="char-actions">
+      <a href="Lebensziel 3.html" class="ghost">⚙️ Charakter bearbeiten</a>
+    </div>
+  </section>
+
+  <!-- Täglicher Boost -->
+  <section class="card">
+    <h2>⚡ Täglicher Boost</h2>
+    <p id="dailyQuote" class="quote">…</p>
+    <button id="nextQuoteBtn" class="ghost">Anderen Spruch</button>
+  </section>
+
+  <!-- Quests -->
+  <main class="card">
+    <h2>📜 Deine Quests</h2>
+
+    <div class="add-quest">
+      <input type="text" id="newQuest" placeholder="Neue Quest eingeben …">
+      <select id="category">
+        <option value="S">💪 Stärke</option>
+        <option value="I">🧠 Intelligenz</option>
+        <option value="D">📏 Disziplin</option>
+        <option value="A">🏃 Ausdauer</option>
+        <option value="C">🗣️ Charisma</option>
+        <option value="F">🎯 Fokus</option>
+      </select>
+      <select id="difficulty" title="Schwierigkeit">
+        <option value="1">Leicht</option>
+        <option value="2" selected>Mittel</option>
+        <option value="3">Schwer</option>
+      </select>
+      <button id="addBtn" class="primary">➕ Hinzufügen</button>
+    </div>
+
+    <ul id="questList"></ul>
+
+    <button id="resetBtn" class="ghost danger">Quests löschen</button>
+  </main>
+
+  <footer>
+    <p>Alles wird automatisch gespeichert ✅</p>
+  </footer>
+
+  <script src="game 3.js"></script>
+</body>
+</html>
