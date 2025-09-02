@@ -2,7 +2,7 @@ const DEFAULT_AVATARS = ["🧑‍🚀","🧙‍♂️","🧑‍💻","🦸","�
 const avatarChoices = document.getElementById("avatarChoices");
 const charForm = document.getElementById("charForm");
 
-// Avatare rendern
+
 DEFAULT_AVATARS.forEach(emo => {
   const div = document.createElement("div");
   div.className = "avatar-option";
@@ -15,7 +15,7 @@ DEFAULT_AVATARS.forEach(emo => {
   avatarChoices.appendChild(div);
 });
 
-// Formular absenden
+
 charForm.addEventListener("submit", (e)=>{
   e.preventDefault();
   const name = document.getElementById("charName").value.trim();
@@ -26,7 +26,7 @@ charForm.addEventListener("submit", (e)=>{
   const character = {
     name, goal, color, avatar,
     xp: 0, level: 1,
-    stats: { S:0, I:0, D:0, A:0, C:0, F:0 } // Stärke, Intelligenz, Disziplin, Ausdauer, Charisma, Fokus
+    stats: { S:0, I:0, D:0, A:0, C:0, F:0 } 
   };
   localStorage.setItem("character", JSON.stringify(character));
   window.location.href = "game 3.html";

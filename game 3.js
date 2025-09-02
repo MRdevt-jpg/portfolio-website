@@ -1,12 +1,10 @@
-// ----- Laden -----
 let character = JSON.parse(localStorage.getItem("character"));
 if(!character){
-  // Falls kein Charakter existiert → zurück zur Erstellung
   window.location.href = "index.html";
 }
 let quests = JSON.parse(localStorage.getItem("quests")) || [];
 
-// Zitate
+
 const quotes = [
   "Heute wird gebaut, nicht geträumt.",
   "Konstanz schlägt Intensität.",
@@ -15,7 +13,7 @@ const quotes = [
   "Disziplin ist die Brücke zwischen Ziel und Erfolg."
 ];
 
-// DOM
+
 const welcomeText = document.getElementById("welcomeText");
 const charAvatar = document.getElementById("charAvatar");
 const charTitle = document.getElementById("charTitle");
@@ -46,7 +44,7 @@ const diffSel = document.getElementById("difficulty");
 const dailyQuote = document.getElementById("dailyQuote");
 const nextQuoteBtn = document.getElementById("nextQuoteBtn");
 
-// ----- Darstellung Charakter -----
+
 function setAccent(color){ document.documentElement.style.setProperty("--accent", color); }
 
 function renderCharacter(){
@@ -61,7 +59,7 @@ function renderCharacter(){
 }
 
 function renderStats(){
-  const maxStat = 200; // für Balken-Skalierung
+  const maxStat = 200; 
   const { S,I,D,A,C,F } = character.stats;
   S_val.textContent = S; I_val.textContent = I; D_val.textContent = D;
   A_val.textContent = A; C_val.textContent = C; F_val.textContent = F;
@@ -73,22 +71,12 @@ function renderStats(){
   F_bar.style.width = Math.min(100, (F/maxStat)*100) + "%";
 }
 
-// ----- Quotes -----
+
 function showQuote(){
   const day = new Date().getDate();
   dailyQuote.textContent = "„" + quotes[day % quotes.length] + "“";
 }
 
-// ----- Quests -----
-/*
-Quest-Objekt:
-{
-  text: string,
-  done: boolean,
-  cat: "S"|"I"|"D"|"A"|"C"|"F",
-  diff: 1|2|3
-}
-*/
 function renderQuests(){
   questList.innerHTML = "";
   quests.forEach((q, i)=>{
@@ -102,7 +90,6 @@ function renderQuests(){
     const label = document.createElement("label");
     label.textContent = q.text;
 
-    // Meta-Tags
     const meta = document.createElement("div");
     meta.className = "quest-meta";
     const tagCat = document.createElement("span");
@@ -135,7 +122,7 @@ function toggleQuest(i){
   const q = quests[i];
   q.done = !q.done;
 
-  // Stat- & XP-Änderung anhand Kategorie + Schwierigkeit
+ 
   const { xpDelta, statDelta } = deltasFor(q.cat, q.diff);
   if(q.done){
     character.xp += xpDelta;
@@ -145,7 +132,7 @@ function toggleQuest(i){
     character.stats[q.cat] = Math.max(0, character.stats[q.cat] - statDelta);
   }
 
-  // Level-Up: einfache Regel (100 XP pro Level)
+  
   const newLevel = Math.max(1, Math.floor(character.xp / 100) + 1);
   character.level = newLevel;
 
@@ -168,11 +155,11 @@ function persist(){
   localStorage.setItem("character", JSON.stringify(character));
 }
 
-// ----- Balancing -----
+
 function deltasFor(cat, diff){
-  // XP je Schwierigkeit
+  
   const xpByDiff = { 1: 5, 2: 10, 3: 20 };
-  // Stat-Punkte je Schwierigkeit
+  
   const statByDiff = { 1: 1, 2: 2, 3: 4 };
   return { xpDelta: xpByDiff[diff] || 10, statDelta: statByDiff[diff] || 2 };
 }
@@ -185,13 +172,13 @@ function catLabel(c){
 }
 function diffLabel(d){ return {1:"Leicht",2:"Mittel",3:"Schwer"}[d] || "Mittel"; }
 
-// ----- Events -----
+
 addBtn.addEventListener("click", addQuest);
 newQuestInput.addEventListener("keypress", e=>{ if(e.key==="Enter") addQuest(); });
 resetBtn.addEventListener("click", resetQuests);
 nextQuoteBtn.addEventListener("click", showQuote);
 
-// ----- Init -----
+
 renderCharacter();
 renderQuests();
 showQuote();
